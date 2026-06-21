@@ -4,6 +4,7 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #D4A017;
 }
 
 .container {
@@ -22,9 +23,10 @@
 }
 
 .logoImg {
-  height: 45px;
+  height: 42px;
   width: auto;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .navMenu ul {
@@ -36,11 +38,11 @@
 }
 
 .navMenu ul li a {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   transition: all 0.2s;
   white-space: nowrap;
@@ -49,8 +51,8 @@
 
 .navMenu ul li a:hover,
 .navMenu ul li.active a {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: rgba(212, 160, 23, 0.2);
+  color: #F5C842;
 }
 
 .mobileToggle {
@@ -72,9 +74,42 @@
 }
 
 @media (max-width: 768px) {
+  .logoImg {
+    height: 32px;
+    max-width: 220px;
+  }
+
   .navMenu {
     display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #800020;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 10px 0;
   }
+  
+  .navMenu.open {
+    display: block;
+  }
+
+  .navMenu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navMenu ul li a {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .navMenu ul li:last-child a {
+    border-bottom: none;
+  }
+
   .mobileToggle {
     display: flex;
   }
